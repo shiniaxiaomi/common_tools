@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 因为createPeople()方法是静态的,所以直接类型.方法就可以直接调用了 -->
+	<bean id="people" class="ioc.Demo7.PeopleFactory" factory-method="createPeople"></bean>
+
+</beans>

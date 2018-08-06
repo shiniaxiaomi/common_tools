@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 因为有depends-on="autority",所以这个bean依赖于名为autority的bean,即先加载名为autority的bean,在加载这个bean -->
+	<bean name="people" class="ioc.Demo_15.People" depends-on="autority">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+	</bean>
+
+	<bean name="autority" class="ioc.Demo_15.Authority"></bean>
+
+</beans>
