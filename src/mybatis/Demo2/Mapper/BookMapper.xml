@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BookDAO"><!-- 这个namespace可以随意取 -->
+    <select id="getAllBooks" resultType="mybatis.Demo2.Model.Book">
+        select id,title,price,publishDate from books
+    </select>
+    <!--获得图书对象通过编号 -->
+    <select id="getBookById" resultType="mybatis.Demo2.Model.Book" parameterType="int">
+        select id,title,price,publishDate from books where id=#{id}
+    </select>
+    <!-- 增加 -->
+    <insert id="add" parameterType="mybatis.Demo2.Model.Book">
+        insert into books(title,price,publishDate)
+        values(#{title},#{price},#{publishDate})
+    </insert>
+    <!-- 删除 -->
+    <delete id="delete" parameterType="int">
+        delete from books where id=#{id}
+    </delete>
+    <!-- 更新 -->
+    <update id="update" parameterType="int">
+        update books set title=#{title},price=#{price},publishDate=#{publishDate}
+        where id=#{id}
+    </update>
+</mapper>
