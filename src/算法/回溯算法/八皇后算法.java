@@ -14,7 +14,7 @@ public class 八皇后算法 {
 
         Date begin =new Date();
 
-        int N=6;
+        int N=8;
         //x表示不能填写,y表示已经有棋子,0表示可以填写
         char[][] aaa=new char[N][N];
         for(int i=0;i<aaa.length;i++){
@@ -33,9 +33,10 @@ public class 八皇后算法 {
         }
 
         Date end =new Date();
-        System.out.println(count);
-        System.out.println(allCount);
-        System.out.println("用时：" +String.valueOf(end.getTime()-begin.getTime())+ "毫秒，计算结果："+list.size());
+//        System.out.println(count);
+//        System.out.println(allCount);
+//        System.out.println("用时：" +String.valueOf(end.getTime()-begin.getTime())+ "毫秒，计算结果："+list.size());
+        System.out.println("计算结果：共有"+list.size()+"中摆法");
     }
 
     public static void digui(List list,char[][] aaa,int n){
